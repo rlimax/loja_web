@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+    <head>
+        <title>Cliente</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/estilos.css">
+
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 mx-auto center gradiente">
+                    <a href="../index.jsp"><i class="fa fa-home home"></i></a>
+                    <h1>CLIENTE</h1>
+                </div>
+            </div>
+            <div class="col-6 mx-auto mt-4 cont_form gradiente show">
+            <form name="cliente" method="POST" action="InserirCliente.jsp">
+              <div class="form-group row">
+                <label for="cod" class="col-2 col-form-label">Código</label> 
+                <div class="col-2">
+                  <input id="cod" name="cod" type="text" class="form-control" disabled>
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label for="nome" class="col-2 col-form-label">Nome*</label> 
+                <div class="col-10">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-address-card-o"></i>
+                      </div>
+                    </div> 
+                    <input id="nome" name="nome" placeholder="Nome completo" type="text" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="email" class="col-2 col-form-label">Email*</label> 
+                <div class="col-10">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-envelope-open-o"></i>
+                      </div>
+                    </div> 
+                    <input id="email" name="email" placeholder="email@dominio.com" type="text" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="senha" class="col-2 col-form-label">Senha*</label> 
+                <div class="col-10">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-lock"></i>
+                      </div>
+                    </div> 
+                    <input id="senha" name="senha" type="password" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="telefone" class="col-2 col-form-label">Telefone</label> 
+                <div class="col-10">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-phone"></i>
+                      </div>
+                    </div> 
+                    <input id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx" type="text" class="form-control" maxlength="10">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="cidade" class="col-2 col-form-label">Cidade</label> 
+                <div class="col-10">
+                  <select id="cidade" name="cidade" class="custom-select">
+                    <option value="Não informado">-</option>
+                    <option value="Taguatinga">Taguatinga</option>
+                    <option value="Gama">Gama</option>
+                    <option value="Ceilandia">Ceilândia</option>
+                  </select>
+                </div>
+              </div> 
+              <div class="form-group row">
+                <div class="col-12 center">
+                  <button name="submit" type="submit" class="btn md btn-success larg">ENVIAR</button>
+                  <button name="submit" type="reset" class="btn btn-warning larg">LIMPAR</button>
+                  <button name="submit" type="reset" class="btn btn-danger larg" disabled>EXCLUIR</button>
+                </div>
+              </div>
+            </form> 
+            </div>
+        </div>
+    </body>
+</html>
+
