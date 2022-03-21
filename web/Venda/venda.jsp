@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/estilos.css">
+        <script type="text/javascript" src="../js/functions.js"></script>
     </head>
     <body>
         <div class="container-fluid">
@@ -43,7 +44,7 @@
                 <label for="valor" class="col-2 col-form-label">Valor(R$)</label> 
                 <div class="col-4">
                   <div class="input-group">
-                    <input id="email" name="valor" type="text" class="form-control">
+                    <input id="valor" name="valor" type="text" class="form-control">
                   </div>
                 </div>
               </div>
@@ -72,7 +73,7 @@
               <div class="form-group row">
                 <label for="produto" class="col-2 col-form-label">Produto</label>
                 <div class="col-4">
-                  <select id="produto" name="produto" class="custom-select">
+                    <select id="produto" name="produto" class="custom-select" onchange="calc()">
                     <option value="Não informado">-</option>
                         <%
                             try{ 
@@ -90,7 +91,7 @@
                 <label for="quantidade" class="col-2 col-form-label">Quantidade</label>
                 <div class="col-4">
                   <div class="input-group">
-                    <input id="quantidade" name="quantidade" type="number" class="form-control" value="1" min="1">
+                    <input id="quantidade" name="quantidade" type="number" class="form-control" value="1" min="1" onchange="calc()">
                   </div>
                 </div>
               </div> 
