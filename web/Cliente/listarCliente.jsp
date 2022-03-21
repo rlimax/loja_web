@@ -54,7 +54,8 @@
                                         out.print("<td>"+objDAOcliente.formataTel(lista.get(num).getTelefone())+"</td>");
                                         out.print("<td>"+lista.get(num).getCidade()+"</td>");
                                         out.print("<td>"+lista.get(num).getEmail()+"</td>");
-                                        out.print("<td><div class=\"yellow\"> EDIT &#8634;</div><div class=\"red\">DEL &#10008;</div></td>");
+                                        out.print("<td><a href='EditarCliente.jsp?cod="+lista.get(num).getCod()+"'><div class=\"yellow\"> EDIT &#8634;</div></a>");
+                                        out.print("<a href='ApagarCliente.jsp?cod="+lista.get(num).getCod()+"'><div class=\"red\">DEL &#10008;</div></a></td>");
                                         out.print("<tr>");
                                     }
                                 }catch(Exception e){

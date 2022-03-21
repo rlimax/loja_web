@@ -6,6 +6,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="DAO.NoticiasXml"%>
 <%@page import="java.util.ArrayList"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,7 +28,7 @@
                 <div class="col-12 center">
                   <a href="Cliente/cliente.html"><button class="btn md btn-success larg">CLIENTE</button></a>
                   <a href="Produto/produto.html"><button class="btn btn-success larg">PRODUTO</button></a>
-                  <a href="Venda/venda.html"><button class="btn btn-success larg" >VENDA</button></a>
+                  <a href="Venda/venda.jsp"><button class="btn btn-success larg" >VENDA</button></a>
                 </div>
                 <br>
                 <div class="col-12 center">

@@ -57,6 +57,18 @@ ArrayList<Cliente> lista = new ArrayList<>();
         }
         return lista;
    }
+    public void apagarCliente(String cod){
+        String sql = "delete from cliente where cod=?";
+        con = new Conexao().conexao();
+        try{
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, cod);
+            pstm.execute();
+            System.out.println("Apagado com sucesso.");
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
     public String formataTel(String tel){
         String texto = null;
         texto = "("+tel.substring(0, 2)+") ";
