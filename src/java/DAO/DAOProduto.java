@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.sql.ResultSet;
+import java.text.DecimalFormat;
 
 
 public class DAOProduto {
@@ -65,6 +66,13 @@ valor float not null
             System.out.println(e);
         }
         return lista;
+   }
+   
+   public String formataValor(String valor){
+       DecimalFormat df = new DecimalFormat("0.00");
+       String saida = null;
+       saida = df.format(Float.parseFloat(valor));
+       return saida;
    }
     
 }

@@ -3,12 +3,13 @@
 <%@page import="DTO.Cliente"%>
 <%@page import="DTO.Produto"%>
 <%@page import="DAO.DAOProduto"%>
+<%@page import="DAO.DataHora"%>
 <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Venda</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/estilos.css">
@@ -33,7 +34,8 @@
                     <label for="data" class="col-2 col-form-label">Data*</label> 
                     <div class="col-4">
                         <div class="input-group"> 
-                            <input id="data" name="data" type="date" class="form-control" required>
+
+                            <input id="data" name="data" type="date" value="<% DataHora data = new DataHora(); out.print(data.getData()); %>" class="form-control" required>
                         </div>
                     </div>
                 </div>      
@@ -57,6 +59,7 @@
                                 ArrayList<Cliente> lista = objDAOcliente.PesquisarCliente();
 
                                 for(int num = 0; num<lista.size(); num++){
+
                                     out.print("<option value=\""+lista.get(num).getCod()+"\">"+lista.get(num).getNome()+"</option>");
                                 }
                             }catch(Exception e){
@@ -65,8 +68,7 @@
                         %>
                   </select>
                 </div>
-              </div> 
-                
+              </div>
               <div class="form-group row">
                 <label for="produto" class="col-2 col-form-label">Produto</label>
                 <div class="col-4">
@@ -75,10 +77,9 @@
                         <%
                             try{ 
                                 DAOProduto objDAOproduto = new DAOProduto();
-                                ArrayList<Produto> lista = objDAOproduto.PesquisarProduto();
-
+                                ArrayList<Produto> lista = objDAOproduto.PesquisarProduto();                             
                                 for(int num = 0; num<lista.size(); num++){
-                                    out.print("<option value=\""+lista.get(num).getCodigo()+"\">"+lista.get(num).getNomeProduto()+"</option>");
+                                    out.print("<option value=\""+lista.get(num).getCodigo()+"\">"+lista.get(num).getNomeProduto()+" - R$ "+objDAOproduto.formataValor(Float.toString(lista.get(num).getValor()))+"</option>");
                                 }
                             }catch(Exception e){
                                 System.out.print(e);
