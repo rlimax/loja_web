@@ -1,6 +1,6 @@
 function calc(){
     let elemProduto = document.getElementById("produto");
-    let elemValor = document.getElementById("valor");
+    let elemValor = document.getElementById("total");
     let elemQtd = document.getElementById("quantidade");
     let preco = elemProduto.options[elemProduto.selectedIndex].textContent;
     let valor = preco.substring(preco.indexOf('$')+1);

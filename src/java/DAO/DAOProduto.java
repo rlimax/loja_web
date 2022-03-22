@@ -17,7 +17,7 @@ ArrayList<Produto> lista = new ArrayList<>();
 
 /**
 create table produto(
-codigo int not null primary key auto_increment,
+cod int not null primary key auto_increment,
 nome_produto varchar(100) not null,
 descricao_produto varchar(150) not null,
 quantidade int not null,
@@ -44,7 +44,7 @@ valor float not null
     
     
    public ArrayList<Produto> PesquisarProduto(){
-       String sql = "select codigo, nome_produto, descricao_produto, quantidade, valor from produto";
+       String sql = "select cod, nome_produto, descricao_produto, quantidade, valor from produto";
         con = new Conexao().conexao();
         
         try{
@@ -52,7 +52,7 @@ valor float not null
             rs = pstm.executeQuery();
             while(rs.next()){
                 Produto objDTOproduto = new Produto();
-                objDTOproduto.setCodigo(rs.getInt("codigo"));
+                objDTOproduto.setCodigo(rs.getInt("cod"));
                 objDTOproduto.setNomeProduto(rs.getString("nome_produto"));
                 objDTOproduto.setDescProduto(rs.getString("descricao_produto"));
                 objDTOproduto.setQtd(Integer.parseInt(rs.getString("quantidade")));
@@ -67,7 +67,23 @@ valor float not null
         }
         return lista;
    }
-   
+    public String consultaCod(String cod){
+        String sql = "select nome_produto from produto where cod=?";
+        String nome = null;
+        con = new Conexao().conexao();
+        try{
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, cod);
+            rs = pstm.executeQuery();
+            while(rs.next()){
+                nome = rs.getString(1);
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+
+        return nome;
+    }
    public String formataValor(String valor){
        DecimalFormat df = new DecimalFormat("0.00");
        String saida = null;

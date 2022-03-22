@@ -69,6 +69,23 @@ ArrayList<Cliente> lista = new ArrayList<>();
             System.out.println(e);
         }
     }
+    public String consultaCod(String cod){
+        String sql = "select nome from cliente where cod=?";
+        String nome = null;
+        con = new Conexao().conexao();
+        try{
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, cod);
+            rs = pstm.executeQuery();
+            while(rs.next()){
+                nome = rs.getString(1);
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+
+        return nome;
+    }
     public String formataTel(String tel){
         String texto = null;
         texto = "("+tel.substring(0, 2)+") ";

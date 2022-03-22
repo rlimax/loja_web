@@ -34,7 +34,7 @@
                 <div class="col-12 center">
                   <a href="Cliente/listarCliente.jsp"><button class="btn btn-success larg">LISTA CLIENTES</button></a>
                   <a href="Produto/listarProduto.jsp"><button class="btn btn-success larg">LISTA PRODUTOS</button></a>
-                  <a href=""><button class="btn btn-success larg" >LISTA VENDAS</button></a>
+                  <a href="Venda/listarVenda.jsp"><button class="btn btn-success larg" >LISTA VENDAS</button></a>
                 </div>
             </div>
 

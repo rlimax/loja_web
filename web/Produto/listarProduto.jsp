@@ -26,7 +26,7 @@
                 </div>
             </div>
             
-            <div class="col-10 mx-auto mt-4 cont_form gradiente show">
+            <div class="col-10 mx-auto mt-4 cont_form gradiente">
                 <div>
                     <table class="table table-dark table-striped">
                         <thead>

@@ -25,4 +25,10 @@ public class DataHora {
         return hoje;
         
     }
+    
+    public String formataData(String data){
+        String retorno;
+        retorno = data.substring(8, 10)+"/"+data.substring(5, 7)+"/"+data.substring(0, 4);
+        return retorno;
+    }
 }

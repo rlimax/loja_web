@@ -39,7 +39,6 @@
                             out.print("<tr><td>Nome:</td><td>"+produto.getNomeProduto()+"</td></tr>");
                             out.print("<tr><td>Descrição:</td><td>"+produto.getDescProduto()+"</td></tr>");
                             out.print("<tr><td>Quantidade:</td><td>"+produto.getQtd()+"</td></tr>");
-                            //out.print("<tr><td>Valor unitário:</td><td>"+produto.getValor()+"</td></tr>");
                             out.print(String.format("<tr><td>Valor unitário:</td><td>R$ %.2f</td></tr>",produto.getValor()));
 
                             DAOProduto dao_produto = new DAOProduto();

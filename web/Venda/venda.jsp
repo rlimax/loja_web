@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="col-6 mx-auto mt-4 cont_form gradiente show">
-            <form name="cliente" method="POST" action="InserirCliente.jsp">
+            <form name="cliente" method="POST" action="InserirVenda.jsp">
                 <div class="form-group row">
                     <label for="cod" class="col-2 col-form-label">Código</label> 
                     <div class="col-2">
@@ -41,18 +41,19 @@
                     </div>
                 </div>      
               <div class="form-group row">
-                <label for="valor" class="col-2 col-form-label">Valor(R$)</label> 
+                <label for="total_view" class="col-2 col-form-label">Valor(R$)</label> 
                 <div class="col-4">
                   <div class="input-group">
-                    <input id="valor" name="valor" type="text" class="form-control">
+                    <input id="total" name="total" type="text" class="form-control">
+
                   </div>
                 </div>
               </div>
                 
               <div class="form-group row">
-                <label for="cliente" class="col-2 col-form-label">Cliente</label>
+                <label for="ccliente" class="col-2 col-form-label">Cliente</label>
                 <div class="col-10">
-                  <select id="cliente" name="cliente" class="custom-select">
+                  <select id="cliente" name="ccliente" class="custom-select">
                     <option value="Não informado">-</option>
                         <%
                             try{ 
